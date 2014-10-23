@@ -1,14 +1,4 @@
 <html>
-    <audio autoplay>
-        <source src="Audio/NiceMeme.mp3" type="audio/mpeg">
-        Upgrade to a better browser pls.
-    </audio>
-
-    <!-- Oh baby, that inline script is totally beautiful -->
-    <audio onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 200)">
-        <source src="Audio/MultiShot.mp3" type="audio/mp3" />
-    </audio>
-
     <head>
         <title>Memes</title>
     </head>
@@ -16,4 +6,16 @@
     <body>
         <h1>Lioncash's Site :^)</h1>
     </body>
+
+    <script src="Audio/multishot-delay.js"></script>
+
+    <audio autoplay>
+        <source src="Audio/NiceMeme.mp3" type="audio/mpeg">
+        Upgrade to a better browser pls.
+    </audio>
+
+    <!-- Oh baby, that inline script is totally beautiful -->
+    <audio onloadeddata="playAfterDelay(this, 200);">
+        <source src="Audio/MultiShot.mp3" type="audio/mp3" />
+    </audio>
 </html>
