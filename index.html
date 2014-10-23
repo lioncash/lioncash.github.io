@@ -7,16 +7,19 @@
 
     <body>
         <h1>Lioncash's Site :^)</h1>
-        <script src="Audio/multishot-delay.js"></script>
+        <script src="Audio/audio-delay.js"></script>
 
-    <audio autoplay>
-        <source src="Audio/NiceMeme.mp3" type="audio/mp3">
-        Upgrade to a better browser pls.
-    </audio>
+        <audio autoplay>
+            <source src="Audio/NiceMeme.mp3" type="audio/mp3">
+            Upgrade to a better browser pls.
+        </audio>
 
-    <!-- Oh baby, that inline script is totally beautiful -->
-    <audio onloadeddata="playAfterDelay(this, 200);">
-        <source src="Audio/MultiShot.mp3" type="audio/mp3" />
-    </audio>
+        <audio onloadeddata="playAfterDelay(this, 200);">
+            <source src="Audio/MultiShot.mp3" type="audio/mp3" />
+        </audio>
+
+        <audio onloadeddata="playAfterDelay(this, 400);">
+            <source src="Audio/Epic.mp3" type="audio/mp3" />
+        </audio>
     </body>
 </html>
