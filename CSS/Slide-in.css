@@ -1,6 +1,8 @@
 h1 {
-    -webkit-animation:slidein 3s;
-            animation:slidein 3s;
+    whitespace: nowrap;
+    display: inline-block;
+    -webkit-animation: slidein 3s;
+            animation: slidein 3s;
 }
 
 @-webkit-keyframes slidein {
