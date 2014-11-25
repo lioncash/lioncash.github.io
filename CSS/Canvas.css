@@ -1,0 +1,74 @@
+.box {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 5px;
+  border: 1px solid #111;
+  overflow: hidden;
+}
+
+.box b {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  -moz-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  -o-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+}
+
+#canimage {
+  display: block;
+  width: 65px;
+  height: 125px;
+  position: absolute;
+
+  background-image: url(../StaticImages/DewCan.png);
+  background-size: 65px 125px;
+  background-repeat: no-repeat;
+
+  -webkit-animation: spin 700ms linear infinite;
+  -moz-animation: spin 700ms linear infinite;
+  -o-animation: spin 700ms linear infinite;
+  animation: spin 700ms linear infinite;
+}
+
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+@-webkit-keyframes moveX {
+  from { left: 0; } to { left: 100%; }
+}
+@-moz-keyframes moveX {
+  from { left: 0; } to { left: 100%; }
+}
+@-o-keyframes moveX {
+  from { left: 0; } to { left: 100%; }
+}
+@keyframes moveX {
+  from { left: 0; } to { left: 100%; }
+}
+@-webkit-keyframes moveY {
+  from { top: 0; } to { top: 100%; }
+}
+@-moz-keyframes moveY {
+  from { top: 0; } to { top: 100%; }
+}
+@-o-keyframes moveY {
+  from { top: 0; } to { top: 100%; }
+}
+@keyframes moveY {
+  from { top: 0; } to { top: 100%; }
+}
