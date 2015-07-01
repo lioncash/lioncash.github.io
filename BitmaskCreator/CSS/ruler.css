@@ -41,8 +41,18 @@
     margin-top: 10%;
     text-align: center;
 }
+#rulerBitmaskText {
+    font-family: Menlo, DejaVu Sans Mono, Consolas, Courier;
+    font-size: 30px;
+}
 
-/* Make me pretty! */
+/* Title */
+h1 {
+    text-align: center;
+    font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica,Arial, sans-serif;
+    font-size: 40px;
+}
+
 body {
     font: 12px Ubuntu, Arial, sans-serif;
     margin: 20px;
