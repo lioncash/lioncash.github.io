@@ -32,12 +32,4 @@ $(function() {
         // Javascript and its fantastic integer handling.
         $(bitmaskDiv).text("0x" + ((bitmaskStringVal >>> 0).toString(16)));
     });
-
-    // Change the spacing programmatically
-    function changeRulerSpacing(spacing) {
-        $(".ruler").
-          css("padding-right", spacing).
-          find("li").
-            css("padding-left", spacing);
-    }
 });
