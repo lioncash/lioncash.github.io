@@ -1,0 +1,53 @@
+/* CSS pertaining to the styling of the ruler itself. */
+
+.ruler {
+    background: lightYellow;
+    box-shadow: 0 -1px 1em hsl(60, 60%, 84%) inset;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    margin: 0;
+    height: 3em;
+    padding-right: 1cm;
+    white-space: nowrap;
+
+    /* Center in viewport */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+}
+.ruler button {
+    background: lightYellow;
+    border: 1px solid #ccc;
+    color: black;
+    display: inline-block;
+    height: inherit;
+    margin-left: .06em;
+    margin-right: .06em;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 2em;
+}
+
+#rulerBitmaskText {
+    margin-top: 10%;
+    text-align: center;
+}
+
+/* Make me pretty! */
+body {
+    font: 12px Ubuntu, Arial, sans-serif;
+    margin: 20px;
+}
+
+div {
+    margin-top: 2em;
+}

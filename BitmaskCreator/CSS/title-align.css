@@ -1,0 +1,6 @@
+/* Aligns the title div to be centered horizontally */
+#title {
+    text-align: center;
+    margin-top: 10%;
+    /* TODO: Find a nice font. */
+}
