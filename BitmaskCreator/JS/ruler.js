@@ -30,6 +30,6 @@ $(function() {
         }
 
         // Javascript and its fantastic integer handling.
-        $(bitmaskDiv).text("0x" + ((bitmaskStringVal >>> 0).toString(16)));
+        $(bitmaskDiv).text("0x" + ((bitmaskStringVal >>> 0).toString(16).toUpperCase()));
     });
 });
