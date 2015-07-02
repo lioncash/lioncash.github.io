@@ -28,9 +28,10 @@
     border: 1px solid #ccc;
     color: black;
     display: inline-block;
-    height: inherit;
+    height: 95%;
     margin-left: .06em;
     margin-right: .09em;
+    margin-top: .10em;
     padding: 0;
     position: relative;
     text-align: center;
