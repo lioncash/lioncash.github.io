@@ -1,24 +1,29 @@
-<!DOCTYPE html> 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Memes</title>
-        <link rel="stylesheet" type="text/css" href="CSS/Slide-in.css">
-        <link rel="stylesheet" type="text/css" href="CSS/Canvas.css">
-    </head>
-
-    <body>
-        <script src="JavaScript/conditionalAudio.js"></script>
-
-        <div class="box">
-            <h1>Lioncash's Site :^)</h1>
-            <b class='dewcan'><span id="canimage"></span></b>
-            <br/>
-            <input type="checkbox" name="privilege" value="Privilege" onclick="playIfChecked('nicememe', this)"> Privilege <br/>
-        </div>
-
-        <audio id="nicememe" src="Audio/NiceMeme.mp3">
-            Imagine using a browser where HTML 5 audio tags aren't supported.
-        </audio>
-    </body>
-</html>
+---
+layout: default
+---
+<header class="masthead">
+  <h1 class="masthead-title">
+    <a href="{{ site.baseurl }}/">{{ site.name }}<span>&#39;s blog</span></a>
+  </h1>
+  <nav class="masthead-nav">
+    {% for nav in site.nav %}
+    <a href="{{ nav.href }}">{{ nav.name }}</a>
+    {% endfor %}
+  </nav>
+</header>
+<div class="content list">
+{% if site.posts.size == 0 %}
+  <h2>No post found</h2>
+{% else %}
+{% for post in site.posts %}
+  <div class="list-item">
+    <h2 class="list-post-title">
+      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    </h2>
+    <div class="list-post-date">
+      <time>{{ post.date | date_to_string }}</time>
+    </div>
+  </div>
+{% endfor %}
+{% endif %}
+</div>
