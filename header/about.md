@@ -3,8 +3,13 @@ title: About
 permalink: /header/about/
 ---
 
-My blog for programming stuff. I need to extend this.
+I'm Lioncash (A.K.A. Lioncache). I usually contribute to projects relating to hardware emulation.
+Currently I'm a core developer and maintainer of the [Dolphin Emulator](https://dolphin-emu.org), an
+emulator for the Nintendo GameCube and Wii consoles, and the [Citra Emulator](https://citra-emu.org),
+an emulator for the Nintendo 3DS.
+
+I'm usually on Freenode under the handle Lioncash. I also have a [Twitter account](https://twitter.com/Lioncache) I can be reached at.
 
 ### Theme Credits
 
-Kiko is a theme developed by [@gfjaru](https://github.com/gfjaru/Kiko).
+This site theme is a slightly modified version of Kiko (the original is developed by [@gfjaru](https://github.com/gfjaru/Kiko))
