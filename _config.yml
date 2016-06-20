@@ -34,3 +34,7 @@ defaults:
       type:         "posts"
     values:
       layout:       "post"
+
+# Extensions
+kramdown:
+  input:            "GFM"
