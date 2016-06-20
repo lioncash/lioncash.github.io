@@ -12,9 +12,9 @@ markdown:           kramdown
 # Navigation
 nav:
   - name:           "About"
-    href:           "//lioncash.github.io/header/about"
+    href:           "header/about"
   - name:           "Other stuff"
-    href:           "//lioncash.github.io/header/other-stuff"
+    href:           "header/other-stuff"
 
 # Sass
 sass:
