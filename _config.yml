@@ -1,9 +1,9 @@
 # Basic
 name:               "Lioncash's blog"
+encoding:           "utf-8"
 
 # URL
 baseurl:            ""
-#baseurl:            "" #For Root Domain
 permalink:          /:year/:month/:day/:title.html
 
 # Markdown
