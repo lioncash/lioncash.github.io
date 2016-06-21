@@ -5,6 +5,7 @@ I'm Lioncash (A.K.A. Lioncache). I usually contribute to projects relating to ha
 # Contact
 
 IRC: Lioncash (on Freenode)
+
 Twitter: [@Lioncache](https://twitter.com/Lioncache)
 
 #### Theme Credits
