@@ -2,14 +2,14 @@
 title: "Dolphin: Post-5.0 Personal Plans"
 ---
 
-I'm a maintainer for [Dolphin](https://dolphin-emu.org). There's always something to be done with regards to improving the codebase. Coincidentally, we're currently nearing the end of a feature freeze that was necessary in order to iron out and fix any regressions to get ready for the release of Dolphin 5.0. Due to the length of the feature freeze, it turns out there's actually *a lot* of things that I want to do when it's over. This blog post will lay out some of those things that I want to do with the codebase, or at least work towards achieving after 5.0 is released. I'll also go into why I consider them important.
+I'm a core developer for [Dolphin](https://dolphin-emu.org). There's always something to be done with regards to improving the codebase. Coincidentally, we're currently nearing the end of a feature freeze that was necessary in order to iron out and fix any regressions to get ready for the release of Dolphin 5.0. Due to the length of the feature freeze, it turns out there's actually *a lot* of things that I want to do when it's over. This blog post will lay out some of those things that I want to do with the codebase, or at least work towards achieving after 5.0 is released. I'll also go into why I consider them important.
 
 ### Enable more warnings
 This one is important (at least to me). Among a host of other things, we currently do not warn about:
 
 - Implicit sign-conversions.
 - Left shifts applied to a negative value (this is undefined behavior).
-- Null pointer dereferences.
+- Null pointer dereferences (obviously undefined behavior).
 - Type-casts that cast away const (can result in undefined behavior if data is modified).
 - Useless casts.
 
@@ -66,7 +66,7 @@ C++17 is an update to the C++ programming language that standardizes quite a few
 Once C++17 support is relatively in place across the main three compilers that we support (Clang, GCC, and MSVC), we should gradually start moving over to it.
 
 ### Consider ways to make VideoCommon less ugly
-VideoCommon is our library that contains the graphics API independent code and interfaces that are used to implement a backend. However, I find the way it's set up is kind of ugly due to its reliance on globals, which can be found [here](https://github.com/dolphin-emu/dolphin/blob/master/Source/Core/VideoCommon/FramebufferManagerBase.h#L108), [here](https://github.com/dolphin-emu/dolphin/blob/master/Source/Core/VideoCommon/PerfQueryBase.h#L69), [here](https://github.com/dolphin-emu/dolphin/blob/master/Source/Core/VideoCommon/RenderBase.h#L188), [here](https://github.com/dolphin-emu/dolphin/blob/master/Source/Core/VideoCommon/TextureCacheBase.h#L189), [here](https://github.com/dolphin-emu/dolphin/blob/master/Source/Core/VideoCommon/VideoConfig.h#L181), and [here](https://github.com/dolphin-emu/dolphin/blob/master/Source/Core/VideoCommon/VideoBackendBase.h#L104). There's likely more in other places as well. Even video backends also have some globals. I would like to work towards eliminating these.
+VideoCommon is our library that contains the graphics API independent code and interfaces that are used to implement a backend. However, I find the way it's set up is kind of ugly due to its reliance on globals, which can be found [here](https://github.com/dolphin-emu/dolphin/blob/master/Source/Core/VideoCommon/FramebufferManagerBase.h#L108), [here](https://github.com/dolphin-emu/dolphin/blob/master/Source/Core/VideoCommon/PerfQueryBase.h#L69), [here](https://github.com/dolphin-emu/dolphin/blob/master/Source/Core/VideoCommon/RenderBase.h#L213), [here](https://github.com/dolphin-emu/dolphin/blob/master/Source/Core/VideoCommon/TextureCacheBase.h#L189), [here](https://github.com/dolphin-emu/dolphin/blob/master/Source/Core/VideoCommon/VideoConfig.h#L184), and [here](https://github.com/dolphin-emu/dolphin/blob/master/Source/Core/VideoCommon/VideoBackendBase.h#L104). There's likely more in other places as well. Even video backends also have some globals. I would like to work towards eliminating these.
 
 On the topic of interfaces, VideoCommon also relies *way* too much on static lifetime variables and static class functions to the point that interfaces actually suffer from it. Some classes actually have to dance around the fact that there's a mishmash of instance variables and static variables at play. I'd like to at least try and rectify some of this.
 
