@@ -1,40 +1,41 @@
-# Basic
-name:               "Lioncash's blog"
-encoding:           "utf-8"
+# Setup
+title:               Lioncash
+encoding:            "utf-8"
+
+# About/contact
+author:
+  name:              Lioncash
+  email:             "" # email here
+  #avatar:           img/avatar.jpg
+  #profile-pic:      img/profile-pic.jpg
 
 # URL
-baseurl:            ""
-permalink:          /:year/:month/:day/:title.html
+permalink:           /:year/:month/:day/:title
 
-# Markdown
-markdown:           kramdown
+# Inclusions
+include: ["_other"]
 
-# Navigation
-nav:
-  - name:           "About"
-    href:           "header/about"
-  - name:           "Other stuff"
-    href:           "header/other-stuff"
+# Build settings
+markdown:            kramdown
+kramdown:
+  input:             "GFM"
 
-# Sass
 sass:
-  style:            :compressed
+  sass_dir:          _sass
+  style:             :compressed
 
-# Scopes
+# Default settings
 defaults:
   -
     scope:
-      path:         ""
-      type:         "pages"
+      path: ""
+      type: "posts"
     values:
-      layout:       "page"
+      layout: "post"
+      author: Lioncash
   -
     scope:
-      path:         ""
-      type:         "posts"
+      path: ""
+      type: "pages"
     values:
-      layout:       "post"
-
-# Extensions
-kramdown:
-  input:            "GFM"
+      layout: "page"

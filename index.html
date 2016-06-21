@@ -1,29 +1,60 @@
 ---
 layout: default
+title: Home
+type: Home
+header: none
+footer: none
 ---
-<header class="masthead">
-  <h1 class="masthead-title">
-    <a href="{{ site.baseurl }}/">{{ site.name }}</a>
-  </h1>
-  <nav class="masthead-nav">
-    {% for nav in site.nav %}
-    <a href="{{ nav.href }}">{{ nav.name }}</a>
-    {% endfor %}
-  </nav>
-</header>
-<div class="content list">
-{% if site.posts.size == 0 %}
-  <h2>No post found</h2>
-{% else %}
-{% for post in site.posts %}
-  <div class="list-item">
-    <h2 class="list-post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-    </h2>
-    <div class="list-post-date">
-      <time>{{ post.date | date_to_string }}</time>
-    </div>
+
+<div class="home">
+  <div class="mini-intro">
+    <!-- <img class="avatar" src="{{site.author.profile-pic}}" alt="your-photo"> -->
+    {% capture home-intro %}
+      {% include content/home-intro.md %}
+    {% endcapture %}
+    {{ home-intro | markdownify }}
   </div>
-{% endfor %}
-{% endif %}
+
+  <ul class="accordion-tabs">
+    <li class="tab-header-and-content">
+      <a href="#" class="tab-link">Blog</a>
+      <div class="tab-content featured-posts">
+          {% for post in site.posts %}
+          <article class="post">
+            <h3 class="post-title">
+              <a href="{{ site.baseurl }}{{ post.url }}">
+                {{ post.date | date_to_string }} — {{ post.title }}
+              </a>
+            </h3>
+          </article>
+          {% endfor %}
+      </div>
+    </li>
+
+    <li class="tab-header-and-content">
+      <a href="#" class="tab-link">Projects</a>
+      <div class="tab-content featured-projects">
+        {% capture home-projects %}
+          {% include content/home-projects.md %}
+        {% endcapture %}
+        {{ home-projects | markdownify }}
+      </div>
+    </li>
+
+    <li class="tab-header-and-content">
+      <a href="#" class="tab-link">About</a>
+      <div class="tab-content">
+        {% capture home-about %}{% include content/home-about.md %}{% endcapture %}
+        {{ home-about | markdownify }}
+      </div>
+    </li>
+
+    <li class="tab-header-and-content">
+      <a href="#" class="tab-link">Other</a>
+      <div class="tab-content">
+        {% capture home-about %}{% include content/home-other.md %}{% endcapture %}
+        {{ home-about | markdownify }}
+      </div>
+    </li>
+  </ul>
 </div>

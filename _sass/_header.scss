@@ -1,0 +1,28 @@
+.fixed-banner {
+  border-bottom: 2px solid $gray-1;
+  max-width: $content-width;
+  padding-bottom: .75rem;
+}
+
+.site-title {
+  color: $gray-4;
+  font-size: 1.5rem;
+  letter-spacing: .1rem;
+  margin-bottom: 0;
+  margin-top: 0;
+
+  @include dim-effect(.85, 1);
+
+  a:hover,
+  a:visited {
+    color: inherit;
+  }
+
+  small {
+    font-size: 60%;
+    font-weight: 400;
+    letter-spacing: 0;
+    opacity: .5;
+    vertical-align: middle;
+  }
+}
