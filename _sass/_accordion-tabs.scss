@@ -9,8 +9,8 @@
 
   clear: both;
   line-height: 1.5;
-  padding: 0;
   max-width: $content-width - $spacing-unit;
+  padding: 0;
   position: relative;
 
   li {
@@ -24,21 +24,19 @@
 
   .tab-link {
     background-color: $tab-inactive-color;
-    border-bottom: $tab-border;
-    border-top: $tab-border;
+    border-bottom: 0;
+    border-top: 0;
     color: $tab-link-color;
-    width: 16%;
+    display: inline-block;
     font-size: .9rem;
-    @include bp-small { font-size: 1rem; }
-    display: block;
+    opacity: .5;
     padding-bottom: .5rem;
     padding-top: .5rem;
     text-align: center;
     text-decoration: none;
-    opacity: .5;
-    border-bottom: 0;
-    border-top: 0;
-    display: inline-block;
+    width: 16%;
+
+    @include bp-small { font-size: 1rem; }
 
     &:hover {
       color: $action-color;
