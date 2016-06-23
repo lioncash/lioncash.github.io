@@ -8,9 +8,9 @@ I'm a core developer for [Dolphin](https://dolphin-emu.org). There's always some
 This one is important (at least to me). Among a host of other things, we currently do not warn about:
 
 - Implicit sign-conversions.
-- Left shifts applied to a negative value (this is undefined behavior).
+- Left shifts applied to a negative value (this is undefined behavior)[^cpp-left-shift-undefined].
 - Null pointer dereferences (obviously undefined behavior).
-- Type-casts that cast away const (can result in undefined behavior if data is modified).
+- Type-casts that cast away const (can result in undefined behavior if data is modified)[^cpp-modify-const].
 - Useless casts.
 
 This is terrible for both code review and ensuring correctness in general. Signedness conversions should *always* be explicit in code—especially in an emulator where this sort of thing can cause subtle errors that are very annoying to track down. Some of these errors can be particularly insidious if they happen to only affect a piece of data incorrectly in such a way that it's hardly noticeable until that data has gone through multiple runs of the same operation.
@@ -29,7 +29,7 @@ What I mean by this is rectifying parts of our codebase that will almost always 
 void Rumble(u8 pad_num, ControlState strength);
 ```
 
-`u8` is unnecessary and can simply be `u32` or `unsigned int`. Using types smaller than the size of `int` where they aren't particularly necessary can indirectly lead to quite a bit of truncation warnings due to how integral promotion rules work.
+`u8` is unnecessary and can simply be `u32` or `unsigned int`. Using types smaller than the size of `int` where they aren't particularly necessary can indirectly lead to quite a bit of truncation warnings due to how integral promotion rules work[^cpp-integral-promotions].
 
 ### I'd like to introduce you to my friends: Analyze and Sanitize
 I love static analysis. Nothing is better than being called an idiot by a computer—I really do mean that; you can actually learn a lot through the process of inspecting and fixing valid errors that static analyzers report. Given a correct setup, static analysis tools can be quite powerful and useful at tracking down errors in programs, as well as potential invocations of undefined behavior.
@@ -102,5 +102,8 @@ Anyways, if you made it this far, thanks for reading!
 #### Acknowledgements
 I'd like to thank [@Veegie_](https://twitter.com/Veegie_) for taking the time to proofread the initial drafts of this blog post for me.
 
-[^cpp-cast-definition]: See §5.4 in the C++14 standard
+[^cpp-left-shift-undefined]: See §5.8 paragraph 2 in the C++14 standard.
+[^cpp-modify-const]: See §7.1.6.1 paragraph 4 in the C++14 standard.
+[^cpp-cast-definition]: See §5.4 in the C++14 standard.
 [^clang-wundefined-reinterpret-cast]: Clang provides `-Wundefined-reinterpret-cast`.
+[^cpp-integral-promotions]: See §4.5 in the C++14 standard.
