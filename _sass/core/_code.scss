@@ -19,13 +19,13 @@ code {
 pre {
   margin-bottom: 1rem;
   margin-top: 0;
-}
 
-pre code {
-  background-color: transparent;
-  color: inherit;
-  font-size: 100%;
-  padding: 0;
+  code {
+    background-color: transparent;
+    color: inherit;
+    font-size: 100%;
+    padding: 0;
+  }
 }
 
 // Pygments via Jekyll
