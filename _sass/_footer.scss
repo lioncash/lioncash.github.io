@@ -23,12 +23,12 @@
 .mini-about {
   background: linear-gradient(to bottom, $gradient-color, #fff 2%);
   @include border-radius(5px);
-  text-align: left;
   padding: 1rem;
+  text-align: left;
 
   @include bp-large {
-    position: absolute;
     left: -4%;
+    position: absolute;
     right: -4%;
   }
 
@@ -44,8 +44,8 @@
   .avatar {
     float: left;
     max-width: 18%;
-    margin-top: .25rem;
     margin-right: 1rem;
+    margin-top: .25rem;
     vertical-align: top;
     @include border-radius(45%);
     border: 3px solid $img-border-color;
