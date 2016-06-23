@@ -27,7 +27,7 @@
   }
 
   p {
-    a { color: $base-link-color !important; }
+    a { color: $base-link-color; }
   }
 
   .avatar {
@@ -46,8 +46,8 @@
   .post {
     margin-bottom: -1rem; //undo default post margin
     a {
-      color: $gray-5 !important;
-      &:visited { color: $visited-link-color !important; }
+      color: $gray-5;
+      &:visited { color: $visited-link-color; }
     }
   }
 }
