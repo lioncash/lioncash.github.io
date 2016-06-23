@@ -18,7 +18,7 @@ This is terrible for both code review and ensuring correctness in general. Signe
 Enabling all warnings is not the goal, since this would border on nonsensical overkill. For example, `-Winline` and `-Wpadded`, are more suited as inspection diagnostics, rather than permanently enabled warnings. However, we really should be more proactive with regards to preventing errors before they actually happen, or at the very least make them more explicit if they exist. Ideally we would have, at minimum, `-Wall` and `-Wextra` enabled for Clang and GCC, and `/W4` for MSVC. This also segues nicely into a slightly controversial topic.
 
 ### Avoiding C-style Casts
-C-style casts are quick to write and get the job done. However, if you've used C at one point in time, you quickly realize that C's type system is about as sturdy as a stack of saltine crackers and so is its casting mechanism. C-style casts will readily attempt to convert whatever is given to them regardless of what the type is. In fact, C++ defines the C-style cast as applying variations of `const_cast`, `reinterpret_cast`, and `static_cast` and using the first conversion that succeeds, even if it results in ill-formed data (see §5.4 in the C++14 standard). C-style casts also don't provide a lot of second-hand information about what is being converted with the absence of context while C++-style casts, on the other hand, do. C++'s casts are also typically better in terms of triggering warnings that indicate undefined behavior (see `-Wundefined-reinterpret-cast` for Clang).
+C-style casts are quick to write and get the job done. However, if you've used C at one point in time, you quickly realize that C's type system is about as sturdy as a stack of saltine crackers and so is its casting mechanism. C-style casts will readily attempt to convert whatever is given to them regardless of what the type is. In fact, C++ defines the C-style cast as applying variations of `const_cast`, `reinterpret_cast`, and `static_cast` and using the first conversion that succeeds, even if it results in ill-formed data[^cpp-cast-definition]. C-style casts also don't provide a lot of second-hand information about what is being converted with the absence of context while C++-style casts, on the other hand, do. C++'s casts are also typically better in terms of triggering warnings that indicate undefined behavior[^clang-wundefined-reinterpret-cast].
 
 At bare minimum all pointer casts should be migrated to C++ casts; ideally they'd be removed entirely where applicable, but this needs to be done one step at a time.
 
@@ -101,3 +101,6 @@ Anyways, if you made it this far, thanks for reading!
 
 #### Acknowledgements
 I'd like to thank [@Veegie_](https://twitter.com/Veegie_) for taking the time to proofread the initial drafts of this blog post for me.
+
+[^cpp-cast-definition]: See §5.4 in the C++14 standard
+[^clang-wundefined-reinterpret-cast]: Clang provides `-Wundefined-reinterpret-cast`.

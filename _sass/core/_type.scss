@@ -112,9 +112,9 @@ blockquote {
 // See the example content post for an example.
 
 // Footnote number within body text
-a[href^="#fn:"],
+[href^="#fn:"],
 // Back to footnote link
-a[href^="#fnref:"] {
+[href^="#fnref:"] {
   display: inline-block;
   font-weight: bold;
   margin-left: .1rem;
