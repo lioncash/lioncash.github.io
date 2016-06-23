@@ -15,12 +15,13 @@
   }
 
   h1 {
-    color: $gray-4;
     border-bottom: 1px dashed $border-color;
+    color: $gray-4;
     margin-bottom: 1rem;
     padding-bottom: .5rem;
 
-    a:hover, a:visited {
+    a:hover,
+    a:visited {
       color: inherit;
     }
   }
