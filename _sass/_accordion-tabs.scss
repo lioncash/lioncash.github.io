@@ -1,4 +1,3 @@
-
 .accordion-tabs {
   $action-color: #477dca !default;
   $tab-link-color: $gray-4;
@@ -19,7 +18,6 @@
 
   .tab-header-and-content {
     display: inline;
-
   }
 
   .tab-link {
@@ -54,7 +52,6 @@
       border-bottom-color: $tab-active-background;
       margin-bottom: -1px;
     }
-
   }
 
   .tab-content {
@@ -74,7 +71,7 @@
     position: absolute;
     left: 75%;
     top: 15%;
-    @include bp-small { left: 79%;  }
+    @include bp-small { left: 79%; }
     @include dim-effect(.6, 1);
     padding: .125rem .5rem;
     margin-bottom: .125rem;
