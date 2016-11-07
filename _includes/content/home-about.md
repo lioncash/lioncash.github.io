@@ -2,7 +2,7 @@
 
 I'm Lioncash (A.K.A. Lioncache). I usually contribute to projects relating to hardware emulation. Currently I'm a core developer and maintainer of the [Dolphin Emulator](https://dolphin-emu.org), an emulator for the Nintendo GameCube and Wii consoles, and the [Citra Emulator](https://citra-emu.org), an emulator for the Nintendo 3DS.
 
-# Contact
+#### Contact
 
 IRC: Lioncash (on Freenode)
 
