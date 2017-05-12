@@ -1,43 +1,48 @@
-// Posts and pages
-//
-// Each post is wrapped in `.post` and is used on default and post layouts. Each
-// page is wrapped in `.page` and is only used on the page layout.
 
-.page,
-.post {
-  margin-bottom: 1rem;
-
-  li + li {
-    margin-top: .25rem;
-  }
-
-  a:visited,
-  a:hover {
-    color: $base-link-color;
-  }
+.posts {
+  margin: 0;
 }
 
-// Blog post or page title
-.page-title,
-.post-title,
-.post-title a {
-  //text-align: center;
-  color: #303030;
+.posts .post {
+  margin-bottom: 0.75em;
+  border-bottom: thin solid #f3f3f3;
 }
 
-.page-title,
-.post-title {
-  margin-bottom: 1.5rem;
+.posts .post:last-child {
+  border-bottom: none;
+  margin-bottom: .375em;
+  padding-bottom: 0;
+}
+
+.post-link .post-title {
   margin-top: 0;
+  font-weight: 600;
+  color: #333;
 }
 
-// Meta data line below post
-.post-date {
-  color: #9a9a9a;
-  display: block;
-  float: left;
-  font-size: .75rem;
+.post-footer {
+  @extend .italic;
+
+  margin-top: .75rem;
+  text-align: center;
+}
+
+.post-footer .avatar {
+  margin: 2rem 0;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.meta,
+.post-meta {
+  width: auto;
+  font-weight: 300;
+  margin: 0;
+  padding: .25em 0;
+  color: #7a7a7a;
   font-style: italic;
-  padding-bottom: .75rem;
-  padding-top: .75rem;
+}
+
+.related-post-title {
+  border-bottom: thin solid #f3f3f3;
 }

@@ -1,60 +1,28 @@
 ---
 layout: default
-title: Home
-type: Home
-header: none
-footer: none
 ---
+{% assign posts_count = (paginator.posts | size) %}
 
 <div class="home">
-  <div class="mini-intro">
-    <!-- <img class="avatar" src="{{site.author.profile-pic}}" alt="your-photo"> -->
-    {% capture home-intro %}
-      {% include content/home-intro.md %}
-    {% endcapture %}
-    {{ home-intro | markdownify }}
-  </div>
+  {% if posts_count > 0 %}
+    <div class="posts">
+      {% for post in paginator.posts %}
+        <div class="post py3">
+          <p class="post-meta">{{ post.date | date: site.date_format }}</p>
+          <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h3 class="h1 post-title">{{ post.title }}</h3></a>
+          <span class="post-summary">
+            {% if post.summary %}
+              {{ post.summary }}
+            {% else %}
+              {{ post.excerpt }}
+            {% endif %}
+          </span>
+        </div>
+      {% endfor %}
+    </div>
 
-  <ul class="accordion-tabs">
-    <li class="tab-header-and-content">
-      <a href="#" class="tab-link">Blog</a>
-      <div class="tab-content featured-posts">
-          {% for post in site.posts %}
-          <article class="post">
-            <h3 class="post-title">
-              <a href="{{ site.baseurl }}{{ post.url }}">
-                {{ post.date | date_to_string }} — {{ post.title }}
-              </a>
-            </h3>
-          </article>
-          {% endfor %}
-      </div>
-    </li>
-
-    <li class="tab-header-and-content">
-      <a href="#" class="tab-link">Projects</a>
-      <div class="tab-content featured-projects">
-        {% capture home-projects %}
-          {% include content/home-projects.md %}
-        {% endcapture %}
-        {{ home-projects | markdownify }}
-      </div>
-    </li>
-
-    <li class="tab-header-and-content">
-      <a href="#" class="tab-link">About</a>
-      <div class="tab-content">
-        {% capture home-about %}{% include content/home-about.md %}{% endcapture %}
-        {{ home-about | markdownify }}
-      </div>
-    </li>
-
-    <li class="tab-header-and-content">
-      <a href="#" class="tab-link">Other</a>
-      <div class="tab-content">
-        {% capture home-about %}{% include content/home-other.md %}{% endcapture %}
-        {{ home-about | markdownify }}
-      </div>
-    </li>
-  </ul>
+    {% include pagination.html %}
+  {% else %}
+    <h1 class='center'>{{ site.text.index.coming_soon }}</h1>
+  {% endif %}
 </div>
