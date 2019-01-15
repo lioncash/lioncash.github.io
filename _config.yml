@@ -2,6 +2,8 @@
 title:       Lioncash
 encoding:    "utf-8"
 date_format: "%b %-d, %Y"
+header_pages:
+ - about.md
 
 # Site settings
 author:      Lioncash
@@ -35,10 +37,6 @@ fb_page_id:
 # (leave blank to disable Disqus)
 disqus_shortname:
 
-# txtpen post comments
-# (leave blank to disable txtpen)
-txtpen_sitename:
-
 # Facebook Comments plugin
 # (leave blank to disable Facebook Comments, otherwise set it to true)
 facebook_comments:
@@ -47,6 +45,7 @@ facebook_comments_number: 10
 
 # Social icons
 github_username: Lioncash
+reddit_username:
 bitbucket_username:
 stackoverflow_id:
 twitter_username: Lioncache
@@ -116,8 +115,11 @@ permalink:    pretty
 paginate:     4
 sass:
   style: compressed
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
 # https://github.com/jekyll/jekyll/issues/2938
-exclude: [vendor]
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
